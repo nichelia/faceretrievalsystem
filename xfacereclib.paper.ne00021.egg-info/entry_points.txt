@@ -1,0 +1,8 @@
+[facereclib.database]
+c-lfw-restricted = xfacereclib.paper.ne00021.database_lfw:restricted
+c-lfw-unrestricted = xfacereclib.paper.ne00021.database_lfw:unrestricted
+c-atnt = xfacereclib.paper.ne00021.database_atnt:database
+
+[console_scripts]
+ne00021_face_recog.py = xfacereclib.paper.ne00021.execute:main
+

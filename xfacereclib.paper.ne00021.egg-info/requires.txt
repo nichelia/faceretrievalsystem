@@ -1,0 +1,6 @@
+setuptools
+bob >= 1.2.0, <= 1.3.0
+facereclib >= 1.2.1
+xbob.db.atnt
+xbob.db.lfw
+matplotlib
