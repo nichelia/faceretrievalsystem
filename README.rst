@@ -2,7 +2,7 @@
 Face Retrieval System
 ======================
 
-This package provides the source code to run the experiments published in the final year project `Face Retrieval System`_.
+This package provides the source code to run the experiments published in the final year project Face Retrieval System `report`_.
 It relies on FaceRecLib_ and Bob_ in order to execute the face retrieval experiments.
 
 .. note::
@@ -14,26 +14,26 @@ It relies on FaceRecLib_ and Bob_ in order to execute the face retrieval experim
 
 Installation
 ============
-The installation of this package relies on the `BuildOut <http://www.buildout.org>`_ system. By default, the command line sequence::
+The installation of this package relies on the `BuildOut <http://www.buildout.org>`_ system. By default, the following command line sequence should download and install almost all requirements, including the FaceRecLib_, the database interfaces `xbob.db.atnt <http://pypi.python.org/pypi/xbob.db.atnt>`_, `xbob.db.lfw <http://pypi.python.org/pypi/xbob.db.lfw>`_ and all their required packages.::
 
   $ python bootstrap.py
   $ ./bin/buildout
 
-should download and install all requirements, including the FaceRecLib_, the database interfaces `xbob.db.atnt <http://pypi.python.org/pypi/xbob.db.atnt>`_, `xbob.db.lfw <http://pypi.python.org/pypi/xbob.db.lfw>`_ and all their required packages.
-There are a few exceptions, which are not automatically downloaded:
+
+However there are a few exceptions:
 
 
 Bob
 ---
 The face recognition experiments rely on the open source signal-processing and machine learning toolbox Bob_.
-To install Bob_, please visit http://www.idiap.ch/software/bob and follow the installation instructions.
-Please verify that you have at least version 1.2.0 of Bob installed.
-If you have installed Bob in a non-standard directory, please open the buildout.cfg file from the base directory and set the ``prefixes`` directory accordingly.
+To install Bob_, please visit `this link <http://www.idiap.ch/software/bob>`_ and follow the installation instructions.
+Please verify that you have at least version 1.2.0 of Bob_ installed.
+If you install Bob_ in a non-standard directory, please open the buildout.cfg file from the base directory and set the ``prefixes`` directory accordingly.
 
 .. note::
-  The experiments that are reported in this project were generated with Bob version 1.2.1 and FaceRecLib_ version 1.2.1.
+  The experiments that are reported in this project were generated with Bob_ version 1.2.1 and FaceRecLib_ version 1.2.1.
   If you use different versions of either of these packages, the results might differ slightly.
-  For example, due to some initialization differences, the results using Bob 1.2.0 and 1.2.1 are not identical, but similar.
+  For example, due to some initialization differences, the results using Bob_ 1.2.0 and 1.2.1 are not identical, but similar.
 
 
 Image Databases
@@ -43,24 +43,24 @@ The images from the databases are not provided.
 Hence, please contact the database owners to obtain a copy of the images.
 The two databases used in our experiments can be downloaded here:
 
-- AT\&T [``atnt``]: http://www.cl.cam.ac.uk/Research/DTG/attarchive:pub/data/att_faces.tar.Z
-- LFW [``lfw``]: http://vis-www.cs.umass.edu/lfw/lfw.tgz
+- `AT\&T <http://www.cl.cam.ac.uk/Research/DTG/attarchive:pub/data/att_faces.tar.Z>`_ [``atnt``]
+- `LFW <http://vis-www.cs.umass.edu/lfw/lfw.tgz>`_ [``lfw``]
 
 Important!
 ''''''''''
-After downloading the databases, you will need to tell the software, where it can find them by changing the **configuration files**.
-In particular, please update the ``atnt_directory`` in **xfacereclib/paper/ne00021/database_atnt.py**, as well as ``lfw_directory`` in **xfacereclib/paper/ne00021/database_lfw.py**.
-Please let all other configuration parameters unchanged as this might influence the face retrieval experiments and, hence, the reproducibility of the results.
+After downloading the databases, you will need to tell the software where it can find them by changing the **configuration files**.
+In particular, please update the ``atnt_directory`` in **xfacereclib/paper/ne00021/database_atnt.py**, as well as the ``lfw_directory`` in **xfacereclib/paper/ne00021/database_lfw.py**.
+Please let all other configuration parameters unchanged as this might influence the face retrieval experiments and hence, the reproducibility of the results.
 
 
-Recreating the results of the project_
+Recreating the results of the project
 ====================================
 
-After successfully setting up the databases, you are now able to run the face retrieval experiments as explained in the report.
+After successfully setting up the databases, you are now able to run the face retrieval experiments as explained in the `report`_.
 
 The experiment configuration
 ----------------------------
-The face recognition experiment are run using the FaceRecLib_, but for convenience there exists a wrapper script that set up the right parametrization for the call to the FaceRecLib_.
+The face recognition experiments are run using the FaceRecLib_. For convenience there is a wrapper script that sets up the right parameters for the call to the FaceRecLib_.
 The configuration files that are used by the FaceRecLib_, which contain all the parameters of the experiments, can be found in the **xfacereclib/paper/ne00021/** directory.
 
 Running the experiments
@@ -82,8 +82,8 @@ Simply use ``--`` to separate options to the ``bin/ne00021_face_recog.py`` from 
 For example, the ``--force`` option might be of interest.
 See ``./bin/faceverify.py --help`` for a complete list of options.
 
-It is advisable to use the ``--dry-run`` option before actually running the experiments, just to see that everything is correct.
-Also, the Info (2) verbosity level prints useful information, e.g., by adding the ``--verbose --verbose`` (or shortly ``-vv``) on the command line.
+It is advisable to use the ``--dry-run`` option before actually running the experiments, just to see that everything is set up correctly.
+Also, the Info (2) verbosity level prints useful information, e.g. by adding the ``--verbose --verbose`` (or shortly ``-vv``) on the command line.
 A commonly used command line sequence to execute the face recognition algorithm on both databases could be:
 
 1. Run the experiments of BOVW codebook method on the ATNT database::
@@ -103,18 +103,18 @@ A commonly used command line sequence to execute the face recognition algorithm 
     $ ./bin/ne00021_face_recog.py -d lfw -p view1 -m dictionary -vvv
 
 .. note::
-  All output directories of the scripts will be automatically generated if they do not exist yet.
+  All the scripts' output directories are automatically generated if they do not exist yet.
 
 .. warning::
-  The execution of the script may take a long time and require large amounts of memory -- especially on the MOBIO database.
-  Nevertheless, the scripts are set up such that they re-use all parts of the experiments as far as this is possible.
+  Scripts may take time to get executed and also require large amount of memory - especially the MOBIO database.
+  Nevertheless, the scripts are set up in such a way so that they re-use parts of the experiments as much as possible.
 
 
 
 Evaluating the experiments
 --------------------------
-After all experiments have finished successfully, the resulting score files can be evaluated.
-For this, the ``bin/evaluate.py`` script can be used to create the Tables shown in Chapter 5 of the project report.
+After successful run of the experiments, the resulting score files can be evaluated.
+For this, the ``bin/evaluate.py`` script can be used to create the Tables shown in Chapter 5 of the project `report`_.
 
 Generating output files
 '''''''''''''''''''''''
@@ -132,9 +132,10 @@ Again, the most usual way to compute the resulting tables could be:
     $ ./bin/evaluate.py -e directory\_to\_scores-eval -R roc.pdf -D det.pdf -C cmc.pdf -c EER
 
 .. note::
-  Please note that it is required to delete the previous results in order to correctly compute new ones (if in the same directory).
+  It is required to delete the previous results in order to correctly compute new ones (if in the same directory).
 
 
+.. _report: https://storage.googleapis.com/nichelia-storage/university/COM3001%20-%20Professional%20Project/finalreport.pdf
 .. _idiap: http://www.idiap.ch
 .. _bob: http://www.idiap.ch/software/bob
 .. _facereclib: http://pypi.python.org/pypi/facereclib
