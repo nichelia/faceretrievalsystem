@@ -14,7 +14,7 @@ setup(
     description='Running the experiments as given in dissertation: "Face Retrieval System".',
 
     # Additional Project Information:
-    url='http://github.com/nicholas-elia/xfacereclib-paper-frs2014', # Currently unavailable.
+    url='https://github.com/nichelia/faceretrievalsystem', # Currently unavailable.
     license='LICENSE.txt',
     author='Nicholas Elia',
     author_email='nich.elia@gmail.com',
