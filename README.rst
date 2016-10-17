@@ -43,7 +43,7 @@ The images from the databases are not provided.
 Hence, please contact the database owners to obtain a copy of the images.
 The two databases used in our experiments can be downloaded here:
 
-- `AT\&T <http://www.cl.cam.ac.uk/Research/DTG/attarchive:pub/data/att_faces.tar.Z>`_ [``atnt``]
+- `AT\&T <http://www.cl.cam.ac.uk/Research/DTG/attarchive/pub/data/att_faces.tar.Z>`_ [``atnt``]
 - `LFW <http://vis-www.cs.umass.edu/lfw/lfw.tgz>`_ [``lfw``]
 
 Important!
